@@ -4,13 +4,124 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>Yang Jie Wen Portifolio</title>
+  <title>Personal Portfolio Website</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
+  <script src="https://kit.fontawesome.com/e14db2bbbd.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-  Hello, my name is Yang Jie Wen
-  <script src="script.js"></script>
+  <div id="header">
+    <div class="container">
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Portfolio</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-text">
+        <p>UI/UX Designer</p>
+        <h1>Hi, I'm <span>Carolina</span></h1>
+      </div>
+    </div>
+  </div>
+<!---------------- About --------------->
+  <div id="about">
+    <div class="container">
+      <div class="row">
+        <div class="about-col-1">
+          <img src="picture/image.png">
+        </div>
+        <div class="about-col-2">
+          <h1 class="sub-title">About Me</h1>
+          <p>I'm currently a student pursuing a Master degree in Computer Science, specializing in Software Engineering. Before this, I worked in system support, but I’ve always been curious about how software is built and that
+            curiosity led me to learn programming. This is my first webpage using HTML.</p>
+
+          <div class="tab-title">
+            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+            <p class="tab-links"  onclick="opentab('experience')">Experience</p>
+            <p class="tab-links"  onclick="opentab('education')">Education</p>
+          </div>
+          <div class="tab-contents active-tab" id="skills">
+            <ul>
+              <li><span>UI/UX</span><br>Designing Web/App Interfaces</li>
+              <li><span>Web Development</span><br>Web App Development</li>
+            </ul>
+          </div>
+          <div class="tab-contents" id="experience">
+            <ul>
+              <li><span>2025</span><br>System Support in My Software SQL Solution</li>
+              <li><span>2024</span><br>Account Assistance in Waftech Sdn Bhd</li>
+              <li><span>2023</span><br>Project Coordinatorin Waftech Sdn Bhd</li>
+            </ul>
+          </div>
+          <div class="tab-contents" id="education">
+            <ul>
+              <li><span>2025</span><br>Master Degree In Computer Sciense of Software Engineering</li>
+              <li><span>2019-2023</span><br>Bachelor Degree (Hons) Biotechnology</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!---------------- Services --------------->
+<div class="services">
+  <div class="container">
+    <h1 class="sub-title">My Services</h1>
+    <div class="services-list">
+      <div>
+        <i class="fa-solid fa-code"></i>
+        <h2>Web Design</h2>
+        <p>Building digital spaces that are not only beautiful but also intuitive, engaging, and tailored to your brand.</p>
+        <a href="#">Learn more</a>
+      </div>
+      <div>
+        <i class="fa-solid fa-ruler-vertical"></i>
+        <h2>UI/UX Design</h2>
+        <p>I create intuitive and user-friendly interfaces that focus on usability, accessibility, and aesthetics. My goal is to design digital experiences that are both visually appealing and easy to navigate.</p>
+        <a href="#">Learn more</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!---------------- Portfolio --------------->
+
+<div id="portfolio">
+<div class="container">
+  <h1 class="sub-title">My Work</h1>
+  <div class="work-list">
+    <div class="work">
+      <img src="picture/work1.png">
+    </div>
+    <div class="work">
+      <img src="picture/work2.png">
+    </div>
+    <div class="work">
+      <img src="picture/work3.png">
+    </div>
+  </div>
+</div>
+</div>
+
+  <script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname) {
+      for (tablink of tablinks) {
+        tablink.classList.remove("active-link");
+      }
+      for (tabcontent of tabcontents) {
+        tabcontent.classList.remove("active-tab");
+      }
+      event.currentTarget.classList.add("active-link");
+      document.getElementById(tabname).classList.add("active-tab")
+    }
+  </script>
 </body>
 
 </html>
